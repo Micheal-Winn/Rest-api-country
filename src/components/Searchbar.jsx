@@ -25,24 +25,24 @@ const Searchbar = () => {
   const [isOpen, setIsOpen] = useState("false");
 
   return (
-    <div className="mt-6 ml-6 sm:flex justify-between sm:w-[90%] sm:mx-auto sm:h-14 sm:mb-10 mt-11">
-      <div className="bg-white w-[95%] flex relative sm:w-1/2">
-        <div className="absolute top-[36%] left-4">
-          <GoSearch className="text-lg text-gray-400" />
+    <div className="mt-6 ml-6 sm:flex justify-between sm:w-[90%] sm:mx-auto sm:h-14 sm:mb-10 sm:mt-11 xl:h-20">
+      <div className="bg-white w-[95%] flex relative sm:w-1/2 xl:w-[32%] xl:shadow-lg  xl:overflow-hidden xl:rounded-lg">
+        <div className="absolute top-[36%] left-4 lg:top-[48%] xl:top-[38%]">
+          <GoSearch className="text-lg text-gray-400 lg:text-2xl" />
         </div>
         <input
-          className="w-full h-full p-3 pl-14 bg-white rounded-md shadow-sm border-none focus-visible:outline-none "
+          className="w-full h-full p-3 pl-14 bg-white rounded-md shadow-sm border-none focus-visible:outline-none lg:py-9 lg:text-xl"
           type={"text"}
           placeholder="Search for a country..."
         />
       </div>
 
-      <div className="w-[60%] relative mt-8 flex rounded-lg sm:w-2/5 sm:mt-0">
+      <div className="w-[60%] relative mt-8 flex rounded-lg sm:w-2/5 sm:mt-0 xl:w-[20%]">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="bg-white w-full px-3 py-2 flex justify-between items-center font-light shadow-md rounded-lg tracking-wide"
+          className="bg-white w-full px-3 py-2 flex justify-between items-center font-light shadow-md rounded-lg tracking-wide lg:py-9"
         >
-          <h5 className="text-sm sm:text-lg">Filter by Region</h5>
+          <h5 className="text-sm sm:text-lg lg:text-xl">Filter by Region</h5>
           {isOpen ? (
             <AiOutlineCaretDown className="h-8" />
           ) : (
@@ -50,11 +50,11 @@ const Searchbar = () => {
           )}
         </button>
         {isOpen && (
-          <div className="absolute w-full left-0 top-[55px] rounded-lg overflow-hidden shadow-lg bg-white sm:top-16">
+          <div className="absolute w-full left-0 top-[55px] rounded-lg overflow-hidden shadow-lg bg-white sm:top-16 lg:top-20 xl:top-[5.4rem]">
             {dummy.map((item, i) => (
               <div
                 key={i}
-                className="bg-white mt-4 flex items-start pl-3 hover:bg-gray-200 duration-300 ease-in py-2 sm:text-base"
+                className="bg-white mt-4 flex items-start pl-3 hover:bg-gray-200 duration-300 ease-in py-2 sm:text-base lg:text-xl lg:py-4"
               >
                 {item.countryName}
               </div>
